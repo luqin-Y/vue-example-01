@@ -28,57 +28,52 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 ## 项目依赖插件
 
-- [vuex](https://github.com/vuejs/vuex)
++ [vuex](https://github.com/vuejs/vuex)
 
-- [vuex-router-sync](https://github.com/vuejs/vuex-router-sync)
+  - 仓库
 
-- [axios](https://github.com/mzabriskie/axios)
++ [vuex-router-sync](https://github.com/vuejs/vuex-router-sync)
 
-- [nprogress](https://github.com/rstacruz/nprogress)
+  - 同步路由到仓库中
 
-- [normalize.css](https://github.com/necolas/normalize.css/commits/master)
++ [axios](https://github.com/mzabriskie/axios)
 
-- mock
+  - 数据请求(ajax)
 
-- babel-runtime
++ [nprogress](https://github.com/rstacruz/nprogress)
 
-- node-sass sass-loader
+  - 页面加载进度条
 
++ [normalize.css](https://github.com/necolas/normalize.css/commits/master)
 
-> 项目依赖包
+  - global css reset
 
-```
-$ npm install --save vuex vuex-router-sync axios nprogress babel-runtime normalize.css
-```
++ mock
 
-> 开发依赖包
+  - 模拟请求数据
 
-```
-# npm instsall --save-dev node-sass sass-loader mock
-```
++ [babel-runtime](https://github.com/babel/babel/tree/master/packages/abel-runtime)
+
+  - 模拟ES2015环境
+
++ node-sass sass-loader
+
+  - Sass编译
 
 
 ## 项目端口配置
 
-> 默认端口8080
+> 修改默认监听端口(默认8080)
 
-修改 config 文件夹下 index.js 找到 8080，这里修改的是 9001
+在项目根目录 config 文件夹下打开 index.js 找到 8080，我这里修改监听 9001
 
 ## 依赖包配置
 
 > mock
 
-在 build 文件夹下找到 dev-server.js 中添加
+在项目根目录 build 文件夹下打开 dev-server.js 添加下面代码，在 exporess 中注册静态文件访问路径
 
 ```
 // mock
 app.use('/mock',express.static('./mock'))
-```
-
-## 错误收集
-
-> node "os":"win32","arch":"x64"
-
-```
-$ npm install -g n --force
 ```
